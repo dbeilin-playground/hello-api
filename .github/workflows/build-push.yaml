@@ -73,7 +73,7 @@ jobs:
       run: |
         cd devops-config
         # Update the image tag in STG environment
-        sed -i 's/tag: ".*"/tag: "${{ steps.version.outputs.version }}"/' argocd/stg/stg-be/hello-api/values-image.yaml
+        sed -i 's/tag: .*/tag: ${{ steps.version.outputs.version }}/' argocd/stg/stg-be/hello-api/values-image.yaml
         echo "Updated STG values-image.yaml with tag: ${{ steps.version.outputs.version }}"
         cat argocd/stg/stg-be/hello-api/values-image.yaml
 
